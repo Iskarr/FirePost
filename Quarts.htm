@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Quarts</title>
+</head>
+<body>
+
+    <p>Enter volume in quarts:</p>
+    <input id="quarts" type="number">
+    <button id="submit" type="button">Submit</button>
+    <p>Conversion to liters: <div id="answer"></div></p>
+
+
+    <script>
+        var q,ql;
+        var l = .946353;
+        var submit = document.getElementById("submit");
+        
+        function exchange() {
+            q = parseFloat(document.getElementById("quarts").value);
+            ql = q * l;
+            an = Math.round(100 * ql)/100;
+            document.getElementById("answer").innerHTML = ql;
+        };
+        submit.addEventListener("click", exchange)
+    </script>
+</body>
+</html>

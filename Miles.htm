@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Miles</title>
+</head>
+<body>
+            <p>Beginning Odometer</p>
+            <input type="number" id="begin">
+            <p>Ending Odometer</p>
+            <input type="number" id="end">
+            <p>Gallons of Gas</p>
+            <input type="number" id="gas"></td></tr>
+            <button id="submit" type="button">Submit</button>            
+            <p>Miles per gallon: <div id="answer"></div></p>
+    <script>
+        var begin, end, gas, x;
+        var submit = document.getElementById("submit");
+
+        function calculate() {
+        begin = parseFloat(document.getElementById("begin").value);
+        end = parseFloat(document.getElementById("end").value);
+        gas = parseFloat(document.getElementById("gas").value);
+        
+        if (end < begin) {
+            x = alert("You went back in time, start over.")
+        } else {
+            x = (end - begin) / gas;
+        }
+
+        document.getElementById("answer").innerHTML = x;
+        }
+        submit.addEventListener("click", calculate);
+    </script>
+</body>
+</html>
