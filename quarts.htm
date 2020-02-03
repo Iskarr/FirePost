@@ -1,0 +1,45 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <title>Ch. 5, Asgmt. 2</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="stylesheet" href="css/normalize.min.css">
+        <link rel="stylesheet" href="css/main.css">
+
+    </head>
+    <body>
+
+        <div class="stage">
+            <p> Chapter 5</p>
+            <p>2. Write a defining table and a JavaScript program that asks a user for a volume in quarts and then converts that value into liters. Your program should correctly handle real numbers such as 7.54.</p>
+            <form>
+                <p>Enter volume in quarts:</p>
+                <input id="quarts" type="number" required>
+                
+                <button id="submit" type="button">Submit</button>
+                
+                <p>Conversion to liters: <span id="answer"></span></p>
+            </form>
+        </div>
+        
+        <script>
+            var q,
+                a;
+            var l = .946353;
+            var submit = document.getElementById("submit");
+            
+            function calculate() {
+                q = parseFloat(document.getElementById("quarts").value);
+                a = q * l;
+                a = Math.round(100 * a)/100;
+                document.getElementById("answer").innerHTML = a;
+            };
+            
+            submit.addEventListener("click", calculate);
+        </script>
+        
+    </body>
+</html>
